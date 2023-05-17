@@ -1,0 +1,177 @@
+================================================================
+CITATIONS (in alphabetical order)
+================================================================
+Bona-Churchill Alaska Ice Core 70 Year Black Carbon and Ammonium Data
+Citation:
+M. Roxana Sierra-Hernández, Emilie Beaudon, Stacy E. Porter, Ellen Mosley-Thompson, Lonnie G. Thompson. 2022. Increased Fire Activity in Alaska since the 1980s: Evidence from an Ice Core-derived Black Carbon Record. Journal of Geophysical Research: Atmospheres., e2021JD035668. doi: 10.1029/2021JD035668
+Dataset DOI:
+https://doi.org/10.25921/qcdb-g896
+================================================================
+Bona-Churchill Ice Core, Alaska 800 Year d18O Data
+Citation:
+Porter, S.E., E. Mosley-Thompson, L.G. Thompson. 2019. Ice core d18O record linked to Western Arctic sea ice variability. Journal of Geophysical Research: Atmospheres, 124, 10784-10801. doi: 10.1029/2019JD031023
+Dataset DOI:
+https://doi.org/10.25921/bh3d-pv86
+================================================================
+Bruce Plateau, Antarctic Peninsula 100yr Ice Core d18O and Accumulation
+Citation:
+Bradley P. Goodwin, Ellen Mosley-Thompson, Aaron B. Wilson, Stacy E. Porter, M. Roxana Sierra-Hernandez. 2016. Accumulation Variability in the Antarctic Peninsula: The Role of Large-Scale Atmospheric Oscillations and Their Interactions. Journal of Climate, 29(7), 2579-2596. doi: 10.1175/JCLI-D-15-0354.1
+Dataset DOI:
+https://doi.org/10.25921/jgx6-2320
+================================================================
+Dasuopu Ice Core 1000 Year d18O, Dust, Anion and Accumulation Data
+Citation:
+Thompson, L.G., T. Yao, E. Mosley-Thompson, M.E. Davis, K.A. Henderson, and P.N. Lin. 2000. A high-resolution millennial record of the South Asian Monsoon from Himalayan ice cores. Science, Vol. 289, pp. 1916-1919, 15 Sepember 2000. DOI: 10.1126/science.289.5486.1916
+Dataset DOI:
+https://doi.org/10.25921/ey0s-ms96
+================================================================
+Dasuopu, China 500 Year Ice Core Trace Element Data
+Citation:
+Paolo Gabrielli, Anna Wegner, M. Roxana Sierra-Hernández, Emilie Beaudon, Mary Davis, Joel D. Barker, and Lonnie G. Thompson. 2020. Early atmospheric contamination on the top of the Himalayas since the onset of the European Industrial Revolution. Proceedings of the National Academy of Sciences. doi: 10.1073/pnas.1910485117
+Dataset DOI:
+https://doi.org/10.25921/t0zv-kv14
+================================================================
+Dunde Ice Cap, Guliya Ice Cap, Dasuopu Glacier - Decadally Averaged Oxygen Isotope Data
+Citation: 
+Thompson, L.G., E. Mosley-Thompson, M.E. Davis, P.-N. Lin, K. Henderson, and T.A. Mashiotta. 2003. Tropical glacier and ice core evidence of climate change on annual to millennial time scales. Climatic Change 59:137-155.
+Dataset DOI:
+https://doi.org/10.25921/2dmf-tt26
+=================================================================
+Dunde Ice Core 1500 Year d18O, Dust, Anion, and Accumulation Data
+Citation:
+Thompson, L.G., E. Mosley-Thompson, H. Brecher, M. Davis, B. Leon, D. Les, P.-N. Lin, T. Mashiotta, and K. Mountain. 2006. Abrupt tropical climate change: Past and present. Proceedings of the National Academy of Sciences, 103(28), 10536-10543. doi: 10.1073/pnas.0603900103
+Dataset DOI:
+https://doi.org/10.25921/s6v0-vz77
+=================================================================
+Guliya Ice Cap Ice Thickness Data
+Citation:
+Stanislav Kutuzov, Lonnie G. Thompson, Ivan Lavrentiev, and Lide Tian. 2018. Ice thickness measurements of Guliya ice cap, western Kunlun Mountains (Tibetan Plateau), China. Journal of Glaciology. doi: 10.1017/jog.2018.91
+Dataset DOI:
+https://doi.org/10.25921/g01a-rj53
+=================================================================
+Guliya Ice Cap, China, -0.64 to 15ka BP Ice Core d18O and d-excess Data
+Citation:
+Thompson, Lonnie G., Jeffrey P. Severinghaus, Tandong Yao, Mary E. Davis, Ellen Mosley-Thompson, Emilie Beaudon, M. Roxana Sierra-Hernández, Stacy E. Porter. 2022. Use of d18Oatm in dating a Tibetan ice core record of Holocene/Late Glacial climate. Proceedings of the National Academy of Sciences, 119(45), e2205545119. doi: 10.1073/pnas.2205545119
+Dataset DOI:
+https://doi.org/10.25921/3kk4-mx85
+=================================================================
+Guliya Ice Cap, Tibetan Plateau 174 Year Stable Isotope, Major Ion and Dust Data
+Citation:
+Lonnie G. Thompson, Tandong Yao, Mary E. Davis, Ellen Mosley-Thompson, Guangjian Wu, Stacy E. Porter, Baiqing Xu, Ping-Nan Lin, Ninglian Wang, Emilie Beaudon, Keqin Duan, M. Roxana Sierra-Hernándeza, Donald V. Kenny. 2018. Ice core records of climate variability on the Third Pole with emphasis on the Guliya ice cap, western Kunlun Mountains. Quaternary Science Reviews, 188, 1-14. doi: 10.1016/j.quascirev.2018.03.003
+Dataset DOI:
+https://doi.org/10.25921/6e2p-x626
+==================================================================
+Guliya Ice Core 132 KYr Isotope, Dust, Anion, and Accumulation Data
+Citation:
+Thompson, L.G., T. Yao, M.E. Davis, K.A. Henderson, E. Mosley-Thompson, P.-N. Lin, J. Beer, H.-A. Synal, J. Cole-Dai, and J.F. Bolzan. 1997. Tropical climate instability: The Last Glacial Cycle from a Qinghai-Tibetan ice core. Science, Vol. 276, pp. 1821-1825, 20 June 1997. DOI: 10.1126/science.276.5320.1821
+Dataset DOI:
+https://doi.org/10.25921/we53-hm46
+===================================================================
+Guliya Ice Core, Tibet 340 Year Trace Elements Data
+Citation:
+M. Roxana Sierra-Hernández, Paolo Gabrielli, Emilie Beaudon, Anna Wegner, Lonnie G. Thompson. 2018. Atmospheric depositions of natural and anthropogenic trace elements on the Guliya ice cap (northwestern Tibetan Plateau) during the last 340 years. Atmospheric Environment, 176, 91-102. doi: 10.1016/j.atmosenv.2017.11.040
+Dataset DOI:
+https://doi.org/10.25921/gxv3-p084
+===================================================================
+Guliya Ice Core, Tibet 45 Year High-Resolution Trace Elements Data
+Citation:
+M. Roxana Sierra-Hernández, Emilie Beaudon, Paolo Gabrielli, and Lonnie Thompson. 2019. 21st-century Asian air pollution impacts glacier in northwestern Tibet. Atmospheric Chemistry and Physics, 19(24), 15533-15544. doi: 10.5194/acp-19-15533-2019
+Dataset DOI:
+https://doi.org/10.25921/3995-b417
+====================================================================
+Interdecadal Pacific Oscillation Index 550 Year Reconstruction
+Citation:
+Stacy E. Porter, Ellen Mosley-Thompson, Lonnie G. Thompson, and Aaron B. Wilson. 2021. Reconstructing an Interdecadal Pacific Oscillation index from a Pacific Basin-wide collection of ice core records. Journal of Climate. doi: 10.1175/JCLI-D-20-0455.1
+Dataset DOI:
+https://doi.org/10.25921/rb6r-3266
+=====================================================================
+Kilimanjaro - Oxygen Isotope, Ion, and Dust Data and Description
+Citation:
+Thompson, L.G., E. Mosley-Thompson, M.E. Davis, K.A. Henderson, H.H. Brecher, V.S. Zagorodnov, T.A. Mashiotta, P.-N. Lin, V.N. Mikhalenko, D.R. Hardy, and J. Beer. 2002. Kilimanjaro Ice Core Records: Evidence of Holocene Climate Change in Tropical Africa. Science, 298(5593), 589-593. doi: 10.1126/science.1073198
+Dataset DOI:
+https://doi.org/10.25921/j7s9-7658
+=====================================================================
+Nevado Huascarán - Oxygen Isotope, NO3, Layer Thickness, and Particle Data
+Citation:
+Thompson, L.G., E. Mosley-Thompson, M.E. Davis, P-N. Lin, K.A. Henderson, J. Cole-Dai, J.F. Bolzan and K-b. Liu. 1995. Late Glacial Stage and Holocene tropical ice core records from Huascarán, Peru. Science, 269, 46-50. doi: 10.1126/science.269.5220.46
+Dataset DOI:
+https://doi.org/10.25921/swwy-sg59
+======================================================================
+Papua, Indonesia Ice Core Isotope and Chemical Data
+Citation:
+Donaldi S. Permana, Lonnie G. Thompson, Ellen Mosley-Thompson, Mary E. Davis, Ping-Nan Lin, Julien P. Nicolas, John F. Bolzan, Broxton W. Bird, Vladimir N. Mikhalenko, Paolo Gabrielli, Victor Zagorodnov, Keith R. Mountain, Ulrich Schotterer, Wido Hanggoro, Muhammad N. Habibie, Yohanes Kaize, Dodo Gunawan, Gesang Setyadi, Raden D. Susanto, Alfonso Fernández, and Bryan G. Mark. 2019. Disappearance of the last tropical glaciers in the Western Pacific Warm Pool (Papua, Indonesia) appears imminent. Proceedings of the National Academy of Sciences. doi: 10.1073/pnas.1822037116
+Dataset DOI:
+https://doi.org/10.25921/ykbr-dn84
+======================================================================
+Papua, Indonesia Rainfall Isotope Data
+Citation:
+Donaldi S. Permana, Lonnie G. Thompson, Gesang Setyadi. 2016. Tropical West Pacific moisture dynamics and climate controls on rainfall isotopic ratios in southern Papua, Indonesia. Journal of Geophysical Research: Atmospheres, 121(5), 2222-2245. doi: 10.1002/2015JD023893
+Dataset DOI:
+https://doi.org/10.25921/3z49-rw02
+======================================================================
+Plateau Remote, Antarctica 2,000 Year Ice Core Oxygen Isotope Data
+Citation:
+PAGES 2k Consortium. 2013. Continental-scale temperature variability during the past two millennia. Nature Geoscience, 6, 339-346. doi: 10.1038/NGEO1797
+Dataset DOI:
+https://doi.org/10.25921/crev-nf73
+======================================================================
+Plateau Remote, Antarctica d18O Data during the last 4000 years
+Citation:
+Mosley-Thompson, Ellen. 1996. Holocene climate changes recorded in an East Antarctica ice core. NATO ASI Series: Climatic Variations and Forcing Mechanisms of the Last 2000 Years Edited by P.D. Jones, R.S. Bradley, and J. Jouzel., 263-279. doi: 10.1007/978-3-642-61113-1_13
+Dataset DOI:
+https://doi.org/10.25921/kyrn-9t19
+======================================================================
+Prince of Wales, Ellesmere Island 1,850 Year Ice Core d18O Data
+Citation:
+Christophe Kinnard, Christian M. Zdanowicz, David A. Fisher, Elisabeth Isaksson, Anne de Vernal, Lonnie G. Thompson. 2011. Reconstructed changes in Arctic sea ice over the past 1,450 years. Nature, 479(7374), 509-512. doi: 10.1038/nature10581
+Dataset DOI:
+https://doi.org/10.25921/5m25-ae04
+======================================================================
+Puruogangri Ice Cap 7000 Year Isotope and Geochemical Data
+Citation:
+Thompson, L.G., T. Yao, M.E. Davis, E. Mosley-Thompson, T.A. Mashiotta, P.-N. Lin, V.N. Mikhalenko, and V.S. Zagorodnov. 2006. Holocene climate variability archived in the Puruogangri ice cap on the central Tibetan Plateau. Annals of Glaciology, Vol. 43, No. 1, September 2006, pp. 61-69. DOI: 10.3189/172756406781812357
+Dataset DOI:
+https://doi.org/10.25921/3w5v-wm35
+======================================================================
+Puruogangri Ice Cap, China 500 Year Trace Element Data
+Citation:
+Emilie Beaudon, Paolo Gabrielli, M. Roxana Sierra-Hernández, Anna Wegner, Lonnie G. Thompson. 2017. Central Tibetan Plateau atmospheric trace metals contamination: a 500-year record from the Puruogangri ice core. Science of the Total Environment, 601-602, 1349-1363. doi: 10.1016/j.scitotenv.2017.05.195
+Dataset DOI:
+https://doi.org/10.25921/b0d4-dd95
+================================================================
+Quelccaya Ice Cap - Particle, d18O, and Accumulation Data
+Citation:
+L. G. Thompson, E. Mosley-Thompson, P. M. Grootes, M. Pourchet, S. Hastenrath. 1984. Tropical glaciers: Potential for ice core paleoclimatic reconstructions. Journal of Geophysical Research: Atmospheres, 89(D3), 4638-4646. doi: 10.1029/JD089iD03p04638
+Dataset DOI:
+https://doi.org/10.25921/sp6t-sy70
+================================================================
+Quelccaya Ice Cap, Peru 1200 Year Trace Element Data
+Citation:
+Chiara Uglietti, Paolo Gabrielli, Colin A. Cooke, Paul Vallelonga, and Lonnie G. Thompson. 2015. Widespread pollution of the South American atmosphere predates the industrial revolution by 240 y. Proceedings of the National Academy of Sciences, published ahead of print February 9, 2015. DOI: 10.1073/pnas.1421119112 https://doi.org/10.25921/4xfe-js25
+Dataset DOI:
+https://doi.org/10.25921/4xfe-js25
+================================================================
+Quelccaya Ice Cap, Peru 1800 Year Oxygen Isotope, Dust, and Major Ions Data
+Citation:
+Thompson, L.G., E. Mosley-Thompson, M.E. Davis, V.S. Zagorodnov, I.M. Howat, V.N. Mikhalenko, and P.-N. Lin. 2013. Annually Resolved Ice Core Records of Tropical Climate Variability Over the Past ~1800 Years. Science, 340(6135), 945-950. doi: 10.1126/science.1234210
+Dataset DOI:
+https://doi.org/10.25921/hwxv-a390
+================================================================
+Sajama - Oxygen Isotope, Ion, and Particle Data
+Citation:
+Thompson, L.G., M.E.Davis, E.M.Thompson, T.A.Sowers, K.A.Henderson, V.S.Zagorodnov, P.N.Lin, V.N. Mikhalenko, R.K.Campen, J.F.Bolzan, J.Cole-Dai and B.Francou. 1998. A 25,000 year tropical climate history from Bolivian ice cores. Science, 282(5295), 1858-1864.
+Dataset DOI:
+https://doi.org/10.25921/r14e-4698
+================================================================
+Siple Station, Antarctica Ice Core 550 Year Oxygen Isotope Data
+Citation:
+Ellen Mosley-Thompson, Lonnie G. Thompson, Pieter M. Grootes and N. Gundestrup. 1990. Little Ice Age (Neoglacial) paleoenvironmental conditions at Siple Station, Antarctica. Annals of Glaciology, 14, 199-204.
+Dataset DOI:
+https://doi.org/10.25921/p3d8-gd44
+================================================================
+Windy Dome, Franz Josef Land 850 Year Ice Core d18O and Melt Data
+Citation:
+Christophe Kinnard, Christian M. Zdanowicz, David A. Fisher, Elisabeth Isaksson, Anne de Vernal, Lonnie G. Thompson. 2011. Reconstructed changes in Arctic sea ice over the past 1,450 years. Nature, 479(7374), 509-512. doi: 10.1038/nature10581
+Dataset DOI:
+https://doi.org/10.25921/f1e8-hq63
+================================================================

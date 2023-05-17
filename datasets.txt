@@ -1,0 +1,267 @@
+======================================================================				
+DATA SETS (in alphabetical order)				
+======================================================================				
+BONA-CHURCHILL, ALASKA ICE CORE 70 YEAR BLACK CARBON AND AMMONIUM DATA								
+Dataset ID:				
+"bona-churchillBC"				
+				
+Subset ID:				Description:
+"ammonium"				-Ammonium
+"ammonium_annual"		-Ammonium (annual averages)
+"blackcarbon"			-Black carbon
+"blackcarbon_annual"	-Black carbon (annual averages)
+======================================================================				
+BONA-CHURCHILL, ALASKA ICE CORE 800 YEAR δ18O DATA								
+Dataset ID:				
+"bona-churchill800"				
+				
+Subset ID:				Description:
+N/A						-N/A
+======================================================================				
+BRUCE PLATEAU, ANTARCTICA 100 YEAR ICE CORE δ18O AND ACCUMULATION								
+Dataset ID:				
+"bruce-plateau"				
+				
+Subset ID:				Description:
+"accumulation"			-Annual net accumulation
+"d18O"					-Annual average δ18O
+======================================================================				
+DASUOPU ICE CORE 1000 YEAR δ18O, DUST, ANION AND ACCUMULATION								
+Dataset ID:				
+"dasuopu1000"				
+				
+Subset ID:				Description:
+"annual"				-Core 3 annual average data
+"decadal"				-Core 3 decadal average data
+"net-balance"			-Core 2 and Core 3 annual net balance
+======================================================================				
+DASUOPU, CHINA 500 YEAR ICE CORE TRACE ELEMENT DATA								
+Dataset ID:				
+"dasuopu500TE"				
+				
+Subset ID:				Description:
+"TEdata"				-10 yr average trace element data
+"TEflux"				-10 yr average trace element flux
+"EnrichFactor"			-10 yr median crustal enrichment factor
+"TEsubannual"			-Subannual trace element data
+======================================================================				
+DUNDE ICE CAP, GULIYA ICE CAP, DADUOPU GLACIER - DECADALLY AVERAGED δ18O								
+Dataset ID:				
+"dunde-guliya-dasuopu"				
+				
+Subset ID:				Description:
+N/A						-N/A
+======================================================================				
+DUNDE ICE CORE 1500 YEAR δ18O, DUST, ANION, AND ACCUMULATION DATA								
+Dataset ID:				
+"dunde1500"				
+				
+Subset ID:				Description:
+"accumulation"			-Core 1 net balance (5yr annual averages)
+"d18O"					-Core 3 oxygen isotopes (decadal averages)
+"dust-anions"			-Core 3 dust and anions (decadal averages)
+======================================================================				
+GULIYA ICE CAP THICKNESS DATA								
+Dataset ID:				
+"guliya-thickness"				
+				
+Subset ID:				Description:
+"plateau"				-Thickness data on the plateau (6050 masl)
+"summit"				-Thickness data on the summit (6650 masl)
+======================================================================				
+GULIYA ICE CAP, CHINA, -0.64 TO 15 KA BP ICE CORE δ18O AND D-EXCESS DATA								
+Dataset ID:				
+"guliya15ka"				
+				
+Subset ID:				Description:
+"raw"					-δ18O raw data
+"century-average"		-δ18O 100yr average data
+======================================================================				
+GULIYA ICE CAP, TIBETAN PLATEAU 174 YEAR STABLE ISOTOPE, MAJOR ION AND DUST DATA								
+Dataset ID:				
+"guliya2015"				
+				
+Subset ID:				Description:
+"raw-core1"				-Core 1 per sample data
+"raw-core2"				-Core 2 per sample data
+"annual-core1"			-Core 1 annually averaged data
+"annual-core2"			-Core 2 annually averaged data
+======================================================================				
+GULIYA ICE CORE 132 KYR ISOTOPE, DUST, ANION, AND ACCUMULATION DATA								
+Dataset ID:				
+"guliya1992"				
+				
+Subset ID:				Description:
+"raw-data"				-Guliya ice core data by depth
+"decade-average"		-Guliya ice core data decadal averages
+"400yr-average"			-Guliya ice core 400-yr averages
+"chlorine-36"			-Chlorine 36 data
+======================================================================				
+GULIYA ICE CORE, TIBET 340 YEAR TRACE ELEMENTS DATA								
+Dataset ID:				
+"guliya340TE"				
+				
+Subset ID:				Description:
+N/A						-N/A
+======================================================================				
+GULIYA ICE CORE, TIBET 45 YEAR HIGH-RESOLUTION TRACE ELEMENTS DATA								
+Dataset ID:				
+"guliya45TE"				
+				
+Subset ID:				Description:
+N/A						-N/A
+======================================================================				
+INTERDECADAL PACIFIC OSCILLATION INDEX 550 YEAR RECONSTRUCTION								
+Dataset ID:				
+"IPO550"				
+				
+Subset ID:				Description:
+N/A						-N/A
+======================================================================				
+KILIMANJARO - OXYGEN ISOTOPE, ION, AND DUST DATA								
+Dataset ID:				
+"kilimanjaro"				
+				
+Subset ID:				Description:
+"d18O-depth"			-KNIF2 and KNIF3 isotope data by depth
+"d18O-decade"			-Decadal average isotope data from 5 cores
+"d18O-50Yavg"			-50yr average isotope and dust (KNIF2 and KNIF3)
+"KNIF2-raw"				-KNIF2 nitrate, δ18O, and dust data per sample
+"KNIF2-chlorine-36"		-KNIF2 chlorine-36 data
+"KNIF2-ion"				-KNIF2 ion chemistry data
+"KNIF3-ion"				-KNIF3 ion chemistry data
+======================================================================				
+NEVADO HUASCARAN - OXYGEN ISOTOPE, NO3, LAYER THICKNESS, AND PARTICLE DATA								
+Dataset ID:				
+"huascaran1993"				
+				
+Subset ID:				Description:
+"C2-100yr-avg"			-Core 2 century-averaged data
+"C2-anion"				-Core 2 anion data
+"annual-avg-cal"		-Annual avg. (calendar year) data from Cores 1 and 2
+"annual-avg-thermal"	-Annual avg. (thermal year; Aug-Jul) data from Cores 1 and 2
+"C2-raw"				-Data by depth from Core 2
+"C1-alt"				-Layer thickness data from Core 1
+"C2-alt"				-Layer thickness data from Core 2
+"monthly"				-Monthly data from Cores 1 and 2
+======================================================================				
+PAPUA, INDONESIA ICE CORE ISOTOPE AND CHEMICAL DATA								
+Dataset ID:				
+"papua-indonesia"				
+				
+Subset ID:				Description:
+"D1-raw"				-Core D1 isotope, dust, and chemistry data
+"D1-tritium"			-Core D1 tritium (3H) data
+"D1B-chemistry"			-Core D1B chemistry data
+"D1B-raw"				-Core D1B raw data
+"NINO3sst"				-δ18O and NINO3 SST reconstruction
+"log-transform"			-Log transformed dust and chemistry data
+"tritium-precip"		-Papua instrumental precipitation tritium data
+======================================================================				
+PAPUA, INDONESIA RAINFALL ISOTOPE DATA								
+Dataset ID:				
+"papua-rainfall"				
+				
+Subset ID:				Description:
+"grasberg"				-Grasberg precipitation isotope data
+"kuala-kencana"			-Kuala Kencana precipitation isotope data
+"portsite"				-Portsite precipitation isotope data
+"tembagapura"			-Tembagapura precipitation isotope data
+"timika"				-Timika precipitation isotope data
+======================================================================				
+PLATEAU REMOTE, ANTARCTICA 2000 & 4000 YEAR ICE CORE OXYGEN ISOTOPE DATA								
+Dataset ID:				
+"plateau-remote"				
+				
+Subset ID:				Description:
+"d18O-2ka"				-δ18O data for the last 2000 years
+"d18O-4ka"				-δ18O data for the last 4000 years
+======================================================================				
+PRINCE OF WALES, ELLESMERE ISLAND 1850 YEAR ICE CORE δ18O DATA								
+Dataset ID:				
+"prince-of-wales"				
+				
+Subset ID:				Description:
+N/A						-N/A
+======================================================================				
+PURUOGANGRI ICE CAP 7000 YEAR ISOTOPE AND GEOCHEMICAL DATA								
+Dataset ID:				
+"puruogangri"				
+				
+Subset ID:				Description:
+"C1-d18O-raw"			-Core 1 average δ18O per meter
+"C1-d18O-decade"		-Core 1 decadal average δ18O
+"C2-d18O-ions"			-Core 2 ions and dust (avg per meter)
+"C2-5yr-avg"			-Core 2 all measurements (5yr averages)
+"C2-decade"				-Core 2 decadal average δ18O, ions, dust
+"C2-100yr-avg"			-Core 2 century-averaged δ18O, ions, dust
+======================================================================				
+PURUOGANGRI ICE CAP, CHINA 500 YEAR TRACE ELEMENT DATA								
+Dataset ID:				
+"puruogangri-TE"				
+				
+Subset ID:				Description:
+"raw"					-Annual trace element + enrichment factor data
+"5yr-avg"				-5yr avg. trace element + enichment factor data
+======================================================================				
+Quelccaya ICE CAP - PARTICLE, δ18O, AND ACCUMULATION DATA								
+Dataset ID:				
+"quelccaya1983"				
+				
+Subset ID:				Description:
+"QC1"					-Core 1 data
+"QS1"					-Summit core data
+"conductivity"			-Conductivity data
+======================================================================				
+QUELCCAYA ICE CAP, PERU 1200 YEAR TRACE ELEMENT DATA								
+Dataset ID:				
+"quelccaya-TE"				
+				
+Subset ID:				Description:
+"5yr-avg"				-Trace elements, enrichment factors, and flux data (5yr avg)
+"5yr-median"			-Trace elements, enrichment factors, and flux data (5yr median)
+"EF-seasonal"			-Dry season and wet season enrichment factor data (5yr median)
+======================================================================				
+QUELCCAYA ICE CAP, PERU 1800 YEAR δ18O, DUST, AND MAJOR IONS DATA								
+Dataset ID:				
+"quelccaya2003"				
+				
+Subset ID:				Description:
+"QND"					-North Dome decadal accumulation + δ18O data
+"QSD-annual"			-Summit Dome annual accumulation, chemisty, + δ18O data
+"QSD-decade"			-Summit Dome decadal accumulation, chemistry, + δ18O data
+"QSD-ALT"				-Summit Dome annual layer thickness data
+"NINO4sst"				-Decadal Nino4 Sea Surface Temperature Reconstruction
+======================================================================				
+SAJAMA - OXYGEN ISOTOPE, ION, AND PARTICLE DATA								
+Dataset ID:				
+"sajama"				
+				
+Subset ID:				Description:
+"C1-100yr-avg"			-Core 1 data as 100yr averages
+"C1-accumulation"		-Core 1 accumulation reconstruction (as standard deviations)
+"sample-avg"			-Core 1 data 5m/3m/0.5m averages, + Core 2 δ18O
+======================================================================				
+SIPLE STATION, ANTARCTICA ICE CORE 550 YEAR δ18O DATA								
+Dataset ID:				
+"siple-station"				
+				
+Subset ID:				Description:
+N/A						-N/A
+======================================================================				
+WINDY DOME, FRANZ JOSEF LAND 850 YEAR ICE CORE δ18O AND MELT DATA								
+Dataset ID:				
+"windy-dome"				
+				
+Subset ID:				Description:
+N/A						-N/A
+======================================================================				
+UNAVAILABLE DATA SETS				
+======================================================================				
+BYRD - MICROPARTICLE DATA				
+CAMP CENTURY - MICROPARTICLE DATA				
+LEWIS GLACIER - MICROPARTICLE DATA				
+QUELCCAYA ICE CAP - SNOW PIT MICROPARTICLE DATA				
+QUELCCAYA ICE CORE ACCUMULATION, PAGES LOTRED-SA VERSION				
+QUELCCAYA ICE CORE δ18O, PAGES LOTRED-SA VERSION				
+TROPICAL PERUVIAN ICE CORE 50 YEAR δ18O DATA				
