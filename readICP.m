@@ -3,7 +3,7 @@ function T = readICP(dataset,subset)
 % 1st input argument must be given as a string. If the data set has a
 % subset, you must specifiy the name of the subset as a second input
 % argument. The name of the data set (and any existing subsets) can be
-% found using the ICPdatasets() function. 
+% found using the datasets() function. 
 % 
 % Here is an example of readICP() in action:
 % 
