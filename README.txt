@@ -65,7 +65,7 @@ Example:
 >> WD = readICP("siple-station");
 
 **************************
->> plt = icePlot(xData,yData,"y_variable_name")
+>> plt = icePlot(xData,yData,parameter_as_string)
 **************************
 The icePlot() function has the same functionality as the base plot()
 function but improves upon the default visualization. You must
@@ -77,31 +77,42 @@ be sure that the elements in yData are in the same order as they were when
 you originally imported them using readICP(). Or, if you have changed the 
 order, be sure that the order of the elements in xData is equivalently 
 reordered.
-3) "y_variable_name" - a string used for specifying the labels and style of
+3) parameter_as_string - a string used for specifying the labels and style of
 the plot. It can be any of the following:
-====================================================
-| MEASUREMENT | STRING |	| MEASUREMENT | STRING |
-|=============|========|	|=============|========|
-| δ18O        | 'd18'  |	| d-excess    | 'dxs'  |
-|-------------|--------|	|-------------|--------|
-| Nitrate     | 'NO3'  |	| Ammonium    | 'NH4'  |
-|-------------|--------|	|-------------|--------|
-| Dust        | 'dust' |	| Chloride    | 'Cl'   |
-|-------------|--------|	|-------------|--------|
-| Sulfate     | 'SO4'  |	| Calcium     | 'Ca'   |
-|-------------|--------|	|-------------|--------|
-| Sodium      | 'Na'   |	| Potassium   | 'K'    |
-|-------------|--------|	|-------------|--------|
-| Net annual  |        |	| Annual layer|	       |
-| accumulation| 'An'   |	| thickness   | 'alt'  |
-|-------------|--------|	|-------------|--------|
-=====================================================
+======================================
+| PARAMETER | STRING | ASSUMED UNITS |
+|===========|========|===============|
+| oxygen    |        |               |
+| stable    | 'd18O' |   permil (‰)  |
+| isotopes  |        |               |
+|-----------|--------|===============|
+| deuterium | 'dxs'  |   permil (‰)  |
+| excess    |        |               |
+|-----------|--------|===============|
+| nitrate   | 'no3'  |      ppb      |
+|-----------|--------|===============|
+| ammonium  | 'nh4'  |      ppb      |
+|-----------|--------|---------------|
+| black     | 'bc'   |     pg/g      |
+| carbon    |        |               |
+|-----------|--------|---------------|
+| sulfate   | 'so4'  |      ppb      |
+|-----------|--------|===============|
+| chloride  | 'Cl'   |      ppb      |
+|-----------|--------|===============|
+| total     | 'dust' |   counts/mL   |
+| dust      |        |               |
+|-----------|--------|===============|
+| accumula- | 'acc'  |   m ice eq.   |
+| ation     |        |               |
+|-----------|--------|===============|
+======================================
 To edit the plot, use dot-indexing in the same way that you would with any 
 other plot. For example
 
->> plt.LineWidth=2;
-
-will change the width of the line in the plot.
+>> plt = icePlot(xData,yData,'NO3'); % Plot nitrate data
+>> plt.LineWidth=2; % Change line thickness to 2
+>> plt.Color ='r'; % Change line color to red
 
 NOTE: If specifying a third input to the icePlot() function, the y-axis will
 be given a default label depending on the parameter you specified. The label
@@ -109,8 +120,10 @@ is not always consistent between data sets. For instance, by default, specify-
 ing "NO3" as the third input will label the y-axis as "ppb". While most of the
 nitrate concentration data sets are in units of ppb, some are in units of ppm. 
 Make sure that the units are correct by visiting the DOI link for the data set.
-If not, you can override the y-axis label by using using ylabel("new label").
+If not, you can override the y-axis label by using using ylabel("new label"):
 
+>> plt = icePlot(xData,yData,'NO3');
+>> ylabel('ppm') % Change ylabel from 'ppb' -> 'ppm'
 
 **************************
 >> icecore("core");
