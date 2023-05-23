@@ -138,9 +138,9 @@ elseif parameter_as_string == "blackcarbon" || parameter_as_string == "bc" || "B
 		'TickDir','out',...
 		'FontName',myfont)
 	box off
-	ylabel('ppb')
+	ylabel('pg/g')
 	fig.Color='#000000'; % Black
-	L=legend('NH_4^+','Location','eastoutside');
+	L=legend('Black Carbon','Location','eastoutside');
 	L.Title.String="Legend";
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
