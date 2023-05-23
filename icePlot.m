@@ -12,12 +12,12 @@ Acceptable third input arguments:
 =================================
 | PARAMETER | STRING | ASSUMED UNITS |
 |===========|========|===============|
-| oxygen    |		 |               |
+| oxygen    |	     |               |
 | stable    | 'd18O' |   permil (‰)  |
 | isotopes  |        |               |
 |-----------|--------|===============|
 | deuterium | 'dxs'  |   permil (‰)  |
-| excess    |		 |               |
+| excess    |        |               |
 |-----------|--------|===============|
 | nitrate   | 'no3'  |      ppb      |
 |-----------|--------|===============|
@@ -131,7 +131,7 @@ elseif parameter_as_string == "nh4" || parameter_as_string == "NH4"
 %%%%%%%%%%%%%%%%%%%%%%%%%
 % Black Carbon 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-elseif parameter_as_string == "blackcarbon" || parameter_as_string == "bc" || "BC"
+elseif parameter_as_string == "blackcarbon" || parameter_as_string == "bc" || parameter_as_string == "BC"
 	fig = plot(x,y,'LineWidth',lw);
 	set(gca,...
 		'YGrid','on',...
