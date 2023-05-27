@@ -7,10 +7,10 @@ function T = readICP(dataset,subset)
 % 
 % Here is an example of readICP() in action:
 % 
-% >> QSD = readICP('QSD2003annual')
+% >> g92 = readICP("guliya1992","raw-data");
 % 
-% This will produce a table named QSD that contains the annually-dated
-% measurements for the Quelccaya Summit Dome core, drilled in 2003.
+% This will produce a table named g92 that contains the raw measurements
+% (linearized by depth) for the 1992 Guliya ice core.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FUNCTION SCRIPT BEGINS HERE:
