@@ -5,7 +5,7 @@ Dasuopu	"Tibetan Plateau, China"	28.38	85.72	7200	1997
 Dunde	"Tibetan Plateau, China"	38.1	96.4	5325	1987
 Guliya	"Tibetan Plateau, China"	35.283	81.483	"6050, 6710"	"1992, 2015"
 Kilimanjaro	"Tanzania, Africa"	-3.08	37.35	5893	2000
-Nevado Huascarán	Peru	-9.11	-77.61	"6048, 6768"	"1993, 2019"
+Nevado Huascarï¿½n	Peru	-9.11	-77.61	"6048, 6768"	"1993, 2019"
 Puncak Jaya	"Papua, Indonesia"	-4.083	137.167	4884	2010
 Plateau Remote	Antarctica	-84	43	3330	1986
 Prince of Wales	"Ellesmere Island, Canada"	78.4	-80.4	2030	1995
@@ -13,4 +13,4 @@ Puruogangri	"Tibetan Plateau, China"	33.9167	89.0833	6070	2000
 Quelccaya	Peru	-13.93	-70.83	5670	"1983, 2003"
 Sajama	Bolivia	-18	-69	6548	1997
 Siple Station	Antarctica	-75.92	-84.15	1054	1985
-Windy Dome	"Grahm Bell Island, Franz Josef Land, Russian Arctic"	80.783	63.65	509	1996
+Windy Dome	"Graham Bell Island, Franz Josef Land, Russian Arctic"	80.783	63.65	509	1996
