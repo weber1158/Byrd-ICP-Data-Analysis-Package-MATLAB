@@ -77,8 +77,8 @@ else
 		disp(datasetdoi{data_idx,1})
 		disp("=====================================")
 	elseif dataset == "plateau-remote" % Plateau remote has two citations, so needs a separate if-statement
-		first=unique(data_idx,'first'); % First occurence of plateau remote
-		last=unique(data_idx,'last'); % Last occurence of plateau remote
+		first=find(data_idx,1,'first'); % First occurence of plateau remote
+		last=find(data_idx,1,'last'); % Last occurence of plateau remote
 		disp("=====================================")
 		disp("Citation (2000yr):")
 		disp(references{first,1})
