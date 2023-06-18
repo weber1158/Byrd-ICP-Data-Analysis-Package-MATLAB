@@ -78,7 +78,7 @@ elseif parameter_as_string == "d18O" || parameter_as_string == "d18o"
 		'TickDir','out',...
 		'FontName',myfont)
 	box off
-	ylabel('‰')
+	ylabel('‰','FontName','Segoe UI')
 	fig.Color='#0343df'; % Blue
 	L=legend('δ^{18}O','Location','eastoutside');
 	L.Title.String="Legend";
