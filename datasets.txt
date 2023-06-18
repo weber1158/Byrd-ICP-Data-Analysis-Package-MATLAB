@@ -123,13 +123,13 @@ Dataset ID:
 "kilimanjaro"				
 				
 Subset ID:				Description:
-"d18O-depth"			-KNIF2 and KNIF3 isotope data by depth
+"d18O-depth"			-NIF2 and NIF3 isotope data by depth
 "d18O-decade"			-Decadal average isotope data from 5 cores
-"d18O-50Yavg"			-50yr average isotope and dust (KNIF2 and KNIF3)
-"KNIF2-raw"				-KNIF2 nitrate, δ18O, and dust data per sample
-"KNIF2-chlorine-36"		-KNIF2 chlorine-36 data
-"KNIF2-ion"				-KNIF2 ion chemistry data
-"KNIF3-ion"				-KNIF3 ion chemistry data
+"d18O-50Yavg"			-50yr average isotope and dust (NIF2 and NIF3)
+"NIF2-raw"				-NIF2 nitrate, δ18O, and dust data per sample
+"NIF2-chlorine-36"		-NIF2 chlorine-36 data
+"NIF2-ion"				-NIF2 ion chemistry data
+"NIF3-ion"				-NIF3 ion chemistry data
 ======================================================================				
 NEVADO HUASCARAN - OXYGEN ISOTOPE, NO3, LAYER THICKNESS, AND PARTICLE DATA								
 Dataset ID:				
