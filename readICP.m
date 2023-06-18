@@ -28,15 +28,19 @@ if dataset == "bona-churchillBC"
 	elseif subset == "ammonium"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/bona-churchill/bona-churchill2022nh4.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",116);
+		T.Properties.VariableUnits={'year CE','ng/g'};
 	elseif subset == "ammonium_annual"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/bona-churchill/bona-churchill2022nh4-ann.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",117);
+		T.Properties.VariableUnits={'year CE','ng/g','mg/m^2/yr'};
 	elseif subset == "blackcarbon"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/bona-churchill/bona-churchill2022bc.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",116);
+		T.Properties.VariableUnits={'year CE','ng/g'};
 	elseif subset == "blackcarbon_annual"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/bona-churchill/bona-churchill2022bc-ann.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",117);
+		T.Properties.VariableUnits={'year CE','ng/g','mg/m^2/yr'};
 	else
 		error("Input(s) not understood. Make sure your input(s) are spelled correctly and given as strings")
 	end
@@ -48,6 +52,7 @@ elseif dataset == "bona-churchill800"
 	% This data set has no subsets
 	url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/bona-churchill/bona-churchill2019d18o.txt";
 	T=readtable(url,"Delimiter","\t","NumHeaderLines",100);
+	T.Properties.VariableUnits={'year CE','‰','‰'};
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% BRUCE PLATEAU, ANTARCTIC PENINSULA 100yr
@@ -61,9 +66,11 @@ elseif dataset == "bruce-plateau"
 	elseif subset == "accumulation"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/bruce/bruce2016accum.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",93);
+		T.Properties.VariableUnits={'age AD','m w.e.'};
 	elseif subset == "d18O"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/bruce/bruce2016d18o.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",93);
+		T.Properties.VariableUnits={'age AD','‰'};
 	else
 		error("Input(s) not understood. Make sure your input(s) are spelled correctly and given as strings")
 	end
@@ -85,6 +92,8 @@ elseif dataset == "dasuopu1000"
 		T(:,7:end)=[];
 		T(548:end,:)=[];
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'year AD','‰',...
+			'counts/mL (0.63-20µm diameter)','ppb','ppb','ppb'};
 	elseif subset == "decadal"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",641,...
 			"ReadVariableNames",false,...
@@ -93,12 +102,15 @@ elseif dataset == "dasuopu1000"
 		T(:,8:end)=[];
 		T(101:end,:)=[];
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'yr at start of decade','yr at end of decade',...
+			'‰','counts/mL (0.63-20µm diameter)','ppb','ppb','ppb'};
 	elseif subset == "net-balance"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",754,...
 			"ReadVariableNames",false,...
 			"ConsecutiveDelimitersRule","join");
-		varnames={'YearAD','Core2_cm_yr','Core3_cm_yr_iceEQ'};
+		varnames={'YearAD','Core2','Core3'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'year AD','cm/yr','cm ice eq./yr'};
 	else
 		error("Input(s) not understood. Make sure your input(s) are spelled correctly and given as strings")
 	end
@@ -114,15 +126,37 @@ elseif dataset == "dasuopu500TE"
 	elseif subset == "TEdata"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/dasuopu/dasuopu2020elem-10yr.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",127);
+		unit1='decade';
+		units2plus=string(repmat('pg/g',size(T,2)-1,1));
+		units=cellstr([unit1;...
+			units2plus]);
+		T.Properties.VariableUnits=units;
 	elseif subset == "TEflux"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/dasuopu/dasuopu2020elem-10yr-flux.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",127);
+		unit1='decade';
+		units2plus=string(repmat('pg/g',size(T,2)-1,1));
+		units=cellstr([unit1;...
+			units2plus]);
+		T.Properties.VariableUnits=units;
 	elseif subset == "EnrichFactor"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/dasuopu/dasuopu2020elem-10yr-efc.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",127);
+		unit1='decade';
+		units2plus=string(repmat('EF_crustal',size(T,2)-1,1));
+		units=cellstr([unit1;...
+			units2plus]);
+		T.Properties.VariableUnits=units;
 	elseif subset == "TEsubannual"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/dasuopu/dasuopu2020elem.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",128);
+		unit1='m';
+		unit2='yr CE';
+		units3plus=string(repmat('pg/g',size(T,2)-2,1));
+		units=cellstr([unit1;...
+			unit2;...
+			units3plus]);
+		T.Properties.VariableUnits=units;
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -166,6 +200,9 @@ elseif dataset == "dunde-guliya-dasuopu"
 	varnames={'date_at_top_of_interval','dunde_d18O','guliya_d18O','dasuopu_d18O'};
 	T2=array2table(T2,"VariableNames",varnames);
 	T=[T2;T]; % Concatentate tables
+	T.Properties.VariableNames={'date','dunde_d18O','guliya_d18O','dasuopu_d18O'};
+	T.Properties.VariableUnits={'date at top of interval AD',...
+		'‰','‰','‰'};
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% DUNDE 1500 yr d18, Dust, Anion Accumulation
@@ -182,23 +219,29 @@ elseif dataset == "dunde1500"
 			"ConsecutiveDelimitersRule","join");
 		T(77:end,:)=[];
 		T(:,4:end)=[];
-		varnames={'YearAD_begin','YearAD_end','Accumulation_mwe'};
+		varnames={'yr_begin','yr_end','Accumulation'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'yr AD','yr AD','m w.e.'};
 	elseif subset == "d18O"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",182,...
 			"ReadVariableNames",false,...
 			"ConsecutiveDelimitersRule","join");
 		T(148:end,:)=[];
 		T(:,4:end)=[];
-		varnames={'YearAD_begin','YearAD_end','d18O'};
+		varnames={'yr_begin','yr_end','d18O'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'yr AD','yr AD','‰'};
 	elseif subset == "dust-anions"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",346,...
 			"ReadVariableNames",false,...
 			"ConsecutiveDelimitersRule","join");
 		T(:,8:end)=[];
-		varnames={'YearAD_begin','YearAD_end','dust_0.63-16','dust_2-60','Cl','SO4','NO3'};
+		varnames={'yr_begin','yr_end','dust_fine','dust_coarse','Cl','SO4','NO3'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'yr AD','yr AD',...
+			'counts/mL (0.63-16µm diameter)',...
+			'counts/mL (2.00-60µm diameter)',...
+			'ppb','ppb','ppb'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -214,9 +257,11 @@ elseif dataset == "guliya-thickness"
 	elseif subset == "plateau"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/guliya/guliya2018plateau-thickness.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",107);
+		T.Properties.VariableUnits={'ID','°N','°E','m asl','m','m'};
 	elseif subset == "summit"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/guliya/guliya2018summit-thickness.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",107);
+		T.Properties.VariableUnits={'ID','°N','°E','m asl','m','m'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -234,11 +279,15 @@ elseif dataset == "guliya15ka"
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",103,"VariableNamingRule","modify");
 		warning on
+		T.Properties.VariableUnits={'m','‰','‰','m','‰','‰','m','‰','‰'};
 	elseif subset == "century-average"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/guliya/guliya2022_100yavgs_d18O_dex.txt";
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",109,"VariableNamingRule","modify");
 		warning on
+		T.Properties.VariableUnits={'m','cal. ka BP','‰',...
+			'‰','m','cal. ka BP','‰','‰','m','cal. ka BP',...
+			'‰','‰','cal. ka BP','‰','‰'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -256,19 +305,26 @@ elseif dataset == "guliya2015"
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",114,"VariableNamingRule","modify");
 		warning on
+		T.Properties.VariableUnits={'m','yr CE','‰','‰','ppb',...
+			'ppb','ppb','ppb','ppb','ppb','ppb','ppb',...
+			'count/mL (0.63-16µm diameter)'};
 	elseif subset == "raw-core2"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/guliya/guliya2018core2.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",106);
+		T.Properties.VariableUnits={'m','‰','‰'};
 	elseif subset == "annual-core1"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/guliya/guliya2018core1annual.txt";
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",114,"VariableNamingRule","modify");
 		warning on
+		T.Properties.VariableUnits={'m','yr CE','‰','‰','ppb','ppb',...
+			'ppb','ppb'};
 	elseif subset == "annual-core2"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/guliya/guliya2018core2annual.txt";
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",106);
 		warning on
+		T.Properties.VariableUnits={'m','yr CE','‰','‰'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -288,16 +344,22 @@ elseif dataset == "guliya1992"
 			"ReadVariableNames",false);
 		T(112:end,:)=[];
 		T(:,7:end)=[];
-		varnames={'depth_at_top','d18O','dust','Cl','SO4','NO3'};
+		varnames={'depth','d18O','dust','Cl','SO4','NO3'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'m','‰',...
+			'counts/mL (0.63-20µm diameter)',...
+			'ppb','ppb','ppb'};
 	elseif subset == "decade-average"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",230,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
-		varnames={'Year_begin','Year_end','d18O','dust','Cl','SO4','NO3','net_balance'};
+		varnames={'yr_begin','yr_end','d18O','dust','Cl','SO4','NO3','accumulation'};
 		T(200:end,:)=[];
 		T(:,9:end)=[];
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'yr AD','yr AD','‰',...
+			'counts/mL (0.63-20µm diameter)',...
+			'ppb','ppb','ppb','cm ice eq./yr'};
 	elseif subset == "400yr-average"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",445,...
 			"ConsecutiveDelimitersRule","join",...
@@ -306,12 +368,15 @@ elseif dataset == "guliya1992"
 		T(333:end,:)=[];
 		T(:,7:end)=[];
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'ka BP','‰','counts/mL (0.63-20µm diameter)',...
+			'ppb','ppb','ppb'};
 	elseif subset == "chlorine-36"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",791,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
 		varnames={'depth','Cl36','error','age'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'m','per gram (x10^4)','Error (%)','ka BP'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -322,6 +387,12 @@ elseif dataset == "guliya1992"
 elseif dataset == "guliya340TE"
 	url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/guliya/guliya2018element.txt";
 	T=readtable(url,"Delimiter","\t","NumHeaderLines",118);
+	u1='yr CE';
+	u2=string(repmat('pg/g',7,1));
+	u3=string(repmat('EF',6,1));
+	u4=string(repmat('Excess Concentration (pg/g)',6,1));
+	units=cellstr([u1;u2;u3;u4]);
+	T.Properties.VariableUnits=units;
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% GULIYA 45yr High-resolution Trace Elements
@@ -329,6 +400,13 @@ elseif dataset == "guliya340TE"
 elseif dataset == "guliya45TE"
 	url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/guliya/guliya2019element.txt";
 	T=readtable(url,"Delimiter","\t","NumHeaderLines",115);
+	u1='yr CE';
+	u2=string(repmat('pg/g',6,1));
+	u3=string(repmat('EF',5,1));
+	u4=string(repmat('Excess Concentration (pg/g)',5,1));
+	units=cellstr([u1;u2;u3;u4]);
+	T.Properties.VariableUnits=units;
+
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% INTERDECADAL PACIFIC OSILLATION INDEX 550 Yr RECONSTRUCTION
@@ -338,6 +416,9 @@ elseif dataset == "IPO550"
 	warning off
 	T=readtable(url,"Delimiter","\t","NumHeaderLines",101);
 	warning on
+	T.Properties.VariableUnits={'yr CE','IPO Index',...
+		'95% confidence interval (lower bound)',...
+		'95% confidence interval (upper bound)'};
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% KILIMANJARO
@@ -356,7 +437,8 @@ elseif dataset == "kilimanjaro"
 		T(506:end,:)=[];
 		T(:,[1,6:end])=[];
 		T.Properties.VariableNames={'depth_at_top',...
-			'KNIF2','KNIF3','KNIF2_on_KNIF3_depth'};
+			'NIF2','NIF3','NIF2_on_NIF3_depth'};
+		T.Properties.VariableUnits={'m','‰','‰','‰'};
 	elseif subset == "d18O-decade"
 		T=readtable(url,"Delimiter"," ",...
 			"NumHeaderLines",581,...
@@ -364,8 +446,9 @@ elseif dataset == "kilimanjaro"
 			"ReadVariableNames",false);
 		T(151:end,:)=[];
 		T(:,[1,8:end])=[];
-		T.Properties.VariableNames={'top_age_kaBP1950',...
-			'KSIF1','KSIF2','KNIF2','KNIF3','FURT'};
+		T.Properties.VariableNames={'age',...
+			'SIF1','SIF2','NIF2','NIF3','FURT'};
+		T.Properties.VariableUnits={'ka b1950','‰','‰','‰','‰','‰'};
 	elseif subset == "d18O-50Yavg"
 		T=readtable(url,"Delimiter"," ",...
 			"NumHeaderLines",744,...
@@ -373,9 +456,11 @@ elseif dataset == "kilimanjaro"
 			"ReadVariableNames",false);
 		T(281:end,:)=[];
 		T(:,[1,8:end])=[];
-		T.Properties.VariableNames={'top_age_kaBP1950',...
-			'KNIF2_d18O','KNIF3_d18O','MIXED','KNIF3_dust','Huascaran_dust'};
-	elseif subset == "KNIF2-raw"
+		T.Properties.VariableNames={'age',...
+			'NIF2_d18O','NIF3_d18O','MIXED','NIF3_dust','Huascaran_dust'};
+		T.Properties.VariableUnits={'ka b1950','‰','‰','‰',...
+			'>0.63µm x10^5/mL','>0.63µm x10^5/mL'};
+	elseif subset == "NIF2-raw"
 		T=readtable(url,"Delimiter"," ",...
 			"NumHeaderLines",1036,...
 			"ConsecutiveDelimitersRule","join",...
@@ -384,7 +469,8 @@ elseif dataset == "kilimanjaro"
 		T(:,[1,6:end])=[];
 		T.Properties.VariableNames={'top_depth',...
 			'NO3','d18O','dust'};
-	elseif subset == "KNIF2-chlorine-36"
+		T.Properties.VariableUnits={'m','ppb','‰','>0.63µm x10^5/mL'};
+	elseif subset == "NIF2-chlorine-36"
 		T=readtable(url,"Delimiter"," ",...
 			"NumHeaderLines",1159, ...
 			"ConsecutiveDelimitersRule","join",...
@@ -393,7 +479,8 @@ elseif dataset == "kilimanjaro"
 		T(:,[1,5:end])=[];
 		T.Properties.VariableNames={'top_depth',...
 			'Cl36','Error'};
-	elseif subset == "KNIF2-ion"
+		T.Properties.VariableUnits={'m','atoms/g','Error (%)'};
+	elseif subset == "NIF2-ion"
 		T=readtable(url,"Delimiter"," ",...
 			"NumHeaderLines",1191,...
 			"ConsecutiveDelimitersRule","join",...
@@ -402,14 +489,18 @@ elseif dataset == "kilimanjaro"
 		T(:,1)=[];
 		T.Properties.VariableNames={'top_age',...
 			'Cl','F','Na','NO3','NH4','Ca','K','Mg','SO4','dust'};
-	elseif subset == "KNIF3-ion"
+		T.Properties.VariableUnits={'ka b1950','ppb','ppb','ppb','ppb',...
+			'ppb','ppb','ppb','ppb','ppb','>0.63µm x10^5/mL'};
+	elseif subset == "NIF3-ion"
 		T=readtable(url,"Delimiter"," ",...
 			"NumHeaderLines",1274,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
 		T(:,1)=[];
-		T.Properties.VariableNames={'top_age',...
+		T.Properties.VariableNames={'age',...
 			'Cl','F','Na','NO3','NH4','Ca','K','Mg','SO4'};
+		T.Properties.VariableUnits={'ka b1950','ppb','ppb','ppb',...
+			'ppb','ppb','ppb','ppb','ppb','ppb'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -428,28 +519,39 @@ elseif dataset == "huascaran1993"
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
 		T(:,1)=[];
-		T.Properties.VariableNames={'age_yrBP','d18O','dust','NO3'};
+		T.Properties.VariableNames={'age','d18O','dust','NO3'};
+		T.Properties.VariableUnits={'yr BP','‰',...
+			'Parcles >0.63µm','ppb'};
 	elseif subset == "C2-anion"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/huascaran/anions.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",117,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
-		T.Properties.VariableNames={'first_thermal_yr_of_decade',...
-			'last_thermal_yr_of_decade','Cl','NO3','SO4'};
+		T.Properties.VariableNames={'start_decade',...
+			'end_decade','Cl','NO3','SO4'};
+		T.Properties.VariableUnits={'First thermal year of decade',...
+			'Last thermal year of decade',...
+			'ppb','ppb','ppb'};
 	elseif subset == "annual-avg-cal"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/huascaran/annualc.txt";
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",117,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
 		T(:,1)=[];
-		T.Properties.VariableNames={'cal_yr','C2_d18O','C2_dust>2','C2_dust>.63','C2_NO3','C1_d18O'};
+		T.Properties.VariableNames={'cal_yr','C2_d18O','C2_dust_large',...
+			'C2_dust_total','C2_NO3','C1_d18O'};
+		T.Properties.VariableUnits={'Calendar Year','‰',...
+			'Particles >2µm','Particles >0.63µm','ppb','‰'};
 	elseif subset == "annual-avg-thermal"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/huascaran/annualt.txt";
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",117,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
 		T(:,1)=[];
-		T.Properties.VariableNames={'thermal_yr','C2_d18O','C2_dust>2','C2_dust>.63','C2_NO3','C1_d18O'};
+		T.Properties.VariableNames={'thermal_yr','C2_d18O',...
+			'C2_dust_large','C2_dust_total','C2_NO3','C1_d18O'};
+		T.Properties.VariableUnits={'Thermal Year (prev. Aug-Jul)',...
+			'‰','Particles >2µm','Particles >0.63µm','ppb','‰'};
 	elseif subset == "C2-raw"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/huascaran/hs12-5m.txt";
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",116,...
@@ -457,7 +559,10 @@ elseif dataset == "huascaran1993"
 			"ReadVariableNames",false);
 		T(:,1)=[];
 		T(end,:)=[];
-		T.Properties.VariableNames={'C2_top_depth','C2_d18O','C2_dust','C2_NO3','C1_top_depth','C1_d18O'};
+		T.Properties.VariableNames={'C2_depth','C2_d18O','C2_dust',...
+			'C2_NO3','C1_depth','C1_d18O'};
+		T.Properties.VariableUnits={'m','‰','Particles >0.63µm',...
+			'ppb','m','‰'};
 	elseif subset == "C1-alt"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/huascaran/hs1layer.txt";
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",118,...
@@ -475,9 +580,11 @@ elseif dataset == "huascaran1993"
 		T=movevars(T,"thermal_yr","Before","Var2");
 		% Delete original Col1 and Col2
 		T(:,2:3)=[];
-		T.Properties.VariableNames={'thermal_yr','depth_at_bottom',...
-			'layer_thickness','mean_density','ice-eq-depth_at_bottom',...
-			'ice-eq-layer-thickness'};
+		T.Properties.VariableNames={'thermal_yr','depth',...
+			'layer_thickness','mean_density','depth_ice_eq',...
+			'layer_thickness_ice_eq'};
+		T.Properties.VariableUnits={'Year','m','m','g/cm^3',...
+			'm ice eq.','m ice eq.'};
 	elseif subset == "C2-alt"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/huascaran/hs2layer.txt";
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",118,...
@@ -495,15 +602,20 @@ elseif dataset == "huascaran1993"
 		T=movevars(T,"thermal_yr","Before","Var2");
 		% Delete original Col1 and Col2
 		T(:,2:3)=[];
-		T.Properties.VariableNames={'thermal_yr','depth_at_bottom',...
-			'layer_thickness','mean_density','ice-eq-depth_at_bottom',...
-			'ice-eq-layer-thickness'};
+		T.Properties.VariableNames={'thermal_yr','depth',...
+			'layer_thickness','mean_density','depth_ice_eq',...
+			'layer_thickness_ice_eq'};
+		T.Properties.VariableUnits={'Year','m','m','g/cm^3',...
+			'm ice eq.','m ice eq.'};
 	elseif subset == "monthly"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/huascaran/all-mo.txt";
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",118,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
-		T.Properties.VariableNames={'month_begin_July1993','C2_d18O','C2_dust>2','C2_NO3','C1_d18O'};
+		T.Properties.VariableNames={'month','C2_d18O',...
+			'C2_dust_large','C2_NO3','C1_d18O'};
+		T.Properties.VariableUnits={'month starting July 1993',...
+			'‰','Particles >2µm','ppb','‰'}; 
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -521,30 +633,39 @@ elseif dataset == "papua-indonesia"
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",105);
 		warning on
+		T.Properties.VariableUnits={'m','‰','‰','counts/mL','ppb','ppb'};
 	elseif subset == "D1-tritium"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2019d1-3h.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",102);
+		T.Properties.VariableUnits={'m','Tritium Units','Tritium Units'};
 	elseif subset == "D1B-chemistry"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2019d1bchem.txt";
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",102);
 		warning on
+		T.Properties.VariableUnits={'m','ppb','ppb'};
 	elseif subset == "D1B-raw"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2019d1biso.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",103);
+		T.Properties.VariableUnits={'m','‰','‰','counts/mL'};
 	elseif subset == "NINO3sst"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2019iso-sst.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",103);
+		T.Properties.VariableUnits={'MM-YYYY','‰','‰','NINO3 SST (°C)'};
 	elseif subset == "log-transform"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2019log10.txt";
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",106);
 		warning on
+		T.Properties.VariableUnits={'yr CE','counts/mL','counts/mL',...
+			'log10','log10','log10','log10'};
 	elseif subset == "tritium-precip"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2019precip-3h.txt";
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",103);
 		warning on
+		T.Properties.VariableUnits={'yr CE','Tritium Units',...
+			'Tritium Units','Tritium Units'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -562,32 +683,42 @@ elseif dataset == "papua-rainfall"
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",93);
 		warning on
+		T.Properties.VariableUnits={...
+			'MMDDYYYY','‰','‰','‰'};
 	elseif subset == "kuala-kencana"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2016kk.txt";
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",93);
 		warning on
+		T.Properties.VariableUnits={...
+			'MMDDYYYY','‰','‰','‰'};
 	elseif subset == "portsite"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2016port.txt";
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",93);
 		warning on
+		T.Properties.VariableUnits={...
+			'MMDDYYYY','‰','‰','‰'};
 	elseif subset == "tembagapura"
-		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2016port.txt";
+		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2016tpr.txt";
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",93);
 		warning on
+		T.Properties.VariableUnits={...
+			'MMDDYYYY','‰','‰','‰'};
 	elseif subset == "timika"
-		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2016port.txt";
+		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/papua/papua2016tmk.txt";
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",93);
 		warning on
+		T.Properties.VariableUnits={...
+			'MMDDYYYY','‰','‰','‰'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	% PLATEAU REMOTE 2000YR OXYGEN ISOTOPES
+	% PLATEAU REMOTE OXYGEN ISOTOPES
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 elseif dataset == "plateau-remote"
 	if nargin < 2 || isempty(subset)
@@ -598,12 +729,14 @@ elseif dataset == "plateau-remote"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/plateau-remote/plateau-remote2013d18o.txt";
 		warning off
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",98);
-		T.Properties.VariableNames={'age_CE','d18O'};
+		T.Properties.VariableNames={'age','d18O'};
 		warning on
+		T.Properties.VariableUnits={'yr CE','‰'};
 	elseif subset == "d18O-4ka"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/reconstructions/climate12k/temperature/version1.0.0/Temp12k_directory_NOAA_files/PlateauRemote.MosleyThompson.1996.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",122);
-		T.Properties.VariableNames={'age_yrBP','d18O'};
+		T.Properties.VariableNames={'age','d18O'};
+		T.Properties.VariableUnits={'cal. yrs BP','‰'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -614,6 +747,7 @@ elseif dataset == "plateau-remote"
 elseif dataset == "prince-of-wales"
 	url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/polar/ellesmere/prince-of-wales2011d18o.txt";
 	T=readtable(url,"Delimiter","\t","NumHeaderLines",103);
+	T.Properties.VariableUnits={'yr CE','‰'};
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% PURUOGANGRI 7000 YR ISOTOPE & GEOCHEMICAL DATA
@@ -630,48 +764,63 @@ elseif dataset == "puruogangri"
 			"ReadVariableNames",false);
 		T(120:end,:)=[];
 		T(:,3:end)=[];
-		varnames={'depth_at_top','d18O'};
+		varnames={'depth','d18O'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'m','‰'};
 	elseif subset == "C1-d18O-decade"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",214,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
 		T(201:end,:)=[];
 		T(:,4:end)=[];
-		varnames={'decade_start_yr','decade_end_yr','d18O'};
+		varnames={'start_decade','end_decade','d18O'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'Year at start of decade',...
+			'Year at end of decade','‰'};
 	elseif subset == "C2-d18O-ions"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",425,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
 		T(216:end,:)=[];
 		T(:,13:end)=[];
-		varnames={'depth_at_top','dust_0.63-20micron','d18O','F','Cl','SO4','NO3','Na','NH4','K','Mg','Ca'};
+		varnames={'depth','dust','d18O','F','Cl',...
+			'SO4','NO3','Na','NH4','K','Mg','Ca'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'m','Particles (0.63-20μm) Concentration',...
+			'‰','ppb','ppb','ppb','ppb','ppb','ppb','ppb','ppb','ppb'};
 	elseif subset == "C2-5yr-avg"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",651,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
 		T(81:end,:)=[];
 		T(:,15:end)=[];
-		varnames={'year_begin','year_end','d18O','accumul_cm_ice_per_yr','dust_0.63-20micron',...
-			'F','Cl','SO4','NO3','Na','NH4','K','Mg','Ca'};
+		varnames={'year_begin','year_end','d18O','accumulation',...
+			'dust','F','Cl','SO4','NO3','Na','NH4','K','Mg','Ca'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'yr AD','yr AD','‰','cm ice eq./yr',...
+			'Particles (0.63-20μm) Concentration','ppb',...
+			'ppb','ppb','ppb','ppb','ppb','ppb','ppb','ppb'};
 	elseif subset == "C2-decade"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",742,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
 		T(201:end,:)=[];
 		T(:,13:end)=[];
-		varnames={'depth_at_top','dust_0.63-20micron','d18O','F','Cl','SO4','NO3','Na','NH4','K','Mg','Ca'};
+		varnames={'depth','dust','d18O','F','Cl','SO4',...
+			'NO3','Na','NH4','K','Mg','Ca'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'m','Particles (0.63-20μm) Concentration',...
+			'‰','ppb','ppb','ppb','ppb','ppb','ppb','ppb','ppb','ppb'};
 	elseif subset == "C2-100yr-avg"
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",953,...
 			"ConsecutiveDelimitersRule","join",...
 			"ReadVariableNames",false);
 		T(:,13:end)=[];
-		varnames={'depth_at_top','dust_0.63-20micron','d18O','F','Cl','SO4','NO3','Na','NH4','K','Mg','Ca'};
+		varnames={'depth','dust','d18O','F','Cl','SO4',...
+			'NO3','Na','NH4','K','Mg','Ca'};
 		T.Properties.VariableNames=varnames;
+		T.Properties.VariableUnits={'m','Particles (0.63-20μm) Concentration',...
+			'‰','ppb','ppb','ppb','ppb','ppb','ppb','ppb','ppb','ppb'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -694,6 +843,11 @@ elseif dataset == "puruogangri-TE"
 		% Join tables
 		T=innerjoin(T1,T2,"Keys","age_AD");
 		T=sortrows(T,"age_AD","descend");
+		ageunits='yr AD';
+		TEunits=string(repmat('pg/g',8,1));
+		EFunits=string(repmat('EF',8,1));
+		units=cellstr([ageunits;TEunits;EFunits]);
+		T.Properties.VariableUnits=units;
 	elseif subset == "5yr-avg"
 		%Trace Element Data
 		url1="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/puruogangri/puruogangri2017elem5yr.txt";
@@ -704,6 +858,11 @@ elseif dataset == "puruogangri-TE"
 		% Join tables
 		T=innerjoin(T1,T2,"Keys","age_AD");
 		T=sortrows(T,"age_AD","descend");
+		ageunits='yr AD';
+		TEunits=string(repmat('pg/g',7,1));
+		EFunits=string(repmat('EF',7,1));
+		units=cellstr([ageunits;TEunits;EFunits]);
+		T.Properties.VariableUnits=units;
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -723,7 +882,13 @@ elseif dataset == "quelccaya1983"
 			"ReadVariableNames",false);
 		T(:,[1,10:end])=[];
 		T(1516:end,:)=[];
-		T.Properties.VariableNames={'Year','dust_0.63-0.80','dust>0.63','dust>1.59','conductivity','d18O','accumul_m','accumul_stdev'};
+		T.Properties.VariableNames={'Year','dust_fine',...
+			'dust_total','dust_large','conductivity','d18O',...
+			'accumulation','accumul_stdev'};
+		T.Properties.VariableUnits={'yr','Particles (0.63-0.80um) Concentration',...
+			'Particles (>0.63um) Concentration',...
+			'Particles (>1.59um) Concentration',...
+			'Conductivity','‰','m','m (stdev)'};
 	elseif subset == "QS1"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/quelccaya/q83summ.txt";
 		% 1984-1000 CE
@@ -732,7 +897,15 @@ elseif dataset == "quelccaya1983"
 			"ReadVariableNames",false);
 		T1(986:end,:)=[];
 		T1(:,9:end)=[];
-		varnames={'Year','dust_0.63-0.80','dust>0.63','dust>1.59','conductivity','d18O','accumul_m','accumul_stdev'};
+		varnames={...
+			'Year',...
+			'dust_fine',...
+			'dust_total',...
+			'dust_large',...
+			'conductivity',...
+			'd18O',...
+			'accumulation',...
+			'accumul_stdev'};
 		T1.Properties.VariableNames=varnames;
 		% 1000-end CE
 		T2=readtable(url,"Delimiter"," ","NumHeaderLines",986+25,...
@@ -743,12 +916,22 @@ elseif dataset == "quelccaya1983"
 		T2.Properties.VariableNames=varnames;
 		% Join tables
 		T=[T1;T2];
+		T.Properties.VariableUnits={...
+			'yr',...
+			'Particles (0.63-0.80um) Concentration',...
+			'Particles (>0.63um) Concentration',...
+			'Particles (>1.59um) Concentration',...
+			'Conductivity',...
+			'‰',...
+			'm',...
+			'm (stdev)'};
 	elseif subset == "conductivity"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/quelccaya/fieldcon.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",26,...
 			"ReadVariableNames",false);
 		T(end,:)=[];
-		T.Properties.VariableNames={'Year','C1_conductivity','QSD_conductivity'};
+		T.Properties.VariableNames={'Year','Core1','SummitCore'};
+		T.Properties.VariableUnits={'Year','Conductivity','Conductivity'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -789,6 +972,13 @@ elseif dataset == "quelccaya-TE"
 		% Combine tables
 		T=join(T1,T2,'Keys','age_AD');
 		T=join(T,T3,'Keys','age_AD');
+		% Add units to table
+		age_units='yr AD';
+		te_units=string(repmat('pg/g',18,1));
+		ef_units=string(repmat('EF',18,1));
+		flux_units=string(repmat('pg/cm^2/yr',18,1));
+		units=cellstr([age_units;te_units;ef_units;flux_units]);
+		T.Properties.VariableUnits=units;
 	elseif subset == "5yr-median"
 		% 5yr median TE concentration
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/quelccaya/quelccaya2015elem5yrmed.txt";
@@ -817,6 +1007,13 @@ elseif dataset == "quelccaya-TE"
 		% Combine tables
 		T=join(T1,T2,'Keys','age_AD');
 		T=join(T,T3,'Keys','age_AD');
+		% Add units to table:
+		age_units='yr AD';
+		te_units=string(repmat('pg/g',18,1));
+		ef_units=string(repmat('EF',18,1));
+		flux_units=string(repmat('pg/cm^2/yr',18,1));
+		units=cellstr([age_units;te_units;ef_units;flux_units]);
+		T.Properties.VariableUnits=units;
 	elseif subset == "EF-seasonal"
 		% Dry Season
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/quelccaya/quelccaya2015elem5yrefcdry.txt";
@@ -842,6 +1039,11 @@ elseif dataset == "quelccaya-TE"
 		newvars=strrep(vars,'cD',dryseason_replacement); % Replace 'cD' with 'cDry'
 		newvars=strrep(newvars,'cW',wetseason_replacement); % Replace 'cW' with 'cWet'
 		T.Properties.VariableNames=newvars;
+		% Add units to table
+		age_units='yr AD';
+		ef_units=string(repmat('EF',36,1));
+		units=cellstr([age_units;ef_units]);
+		T.Properties.VariableUnits=units;
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -857,18 +1059,33 @@ elseif dataset == "quelccaya2003"
 	elseif subset == "QND"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/quelccaya/quelccaya2013nd-decadal.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",116);
+		T.Properties.VariableUnits={'First thermal yr of decade',...
+			'Last thermal year of decade',...
+			'‰','m w.e.'};
 	elseif subset == "QSD-annual"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/quelccaya/quelccaya2013.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",117,...
 			"VariableNamingRule","preserve");
 		vars=T.Properties.VariableNames;
-		v3='iceacc_m';
+		v3='iccacc_m';
 		v4='dust';
 		vars{3}=v3; % Fix variable 3
 		vars_extract=vars(4:12);
 		vars(5:end)=vars_extract; % Fix variables 5:13
 		vars{4}=v4; % Fix variable 4
 		T.Properties.VariableNames=vars; % Rename table variables
+		% Add units to table
+		age_units='yr AD';
+		d18_units='‰';
+		acc_units='m w.e.';
+		dust_units='Particles (0.63-20um) per mL';
+		ions_units=string(repmat('ppb',9,1));
+		units = cellstr([...
+			age_units;...
+			d18_units;acc_units;...
+			dust_units;...
+			ions_units]);
+		T.Properties.VariableUnits=units;
 	elseif subset == "QSD-decade"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/quelccaya/quelccaya2013sd-decadal.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",117,...
@@ -881,14 +1098,28 @@ elseif dataset == "quelccaya2003"
 		vars(6:end)=vars_extract; % Fix variables 6:14
 		vars{5}=v5; % Fix variable 5
 		T.Properties.VariableNames=vars; % Rename table variables
+		% Add units to table:
+		u1 = 'First thermal year of decade';
+		u2 = 'Last thermal year of decade';
+		uD18='‰';
+		uAcc='m w.e.';
+		uDust='Particles (0.63-20um) per mL';
+		uIons=string(repmat('ppb',9,1));
+		units=cellstr([u1;u2;uD18;uAcc;uDust;uIons]);
+		T.Properties.VariableUnits=units;
 	elseif subset == "QSD-ALT"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/quelccaya/quelccaya2013layer-thickness.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",105,...
 			"VariableNamingRule","preserve");
+		T.Properties.VariableUnits={'yr AD','m'};
 	elseif subset == "NINO4sst"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/quelccaya/quelccaya2013nino4sst.txt";
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",105,...
 			"VariableNamingRule","preserve");
+		T.Properties.VariableUnits={...
+			'First thermal year of decade',...
+			'Last thermal year of decade',...
+			'NINO4 SST (°C)'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -908,8 +1139,10 @@ elseif dataset == "sajama"
 			"ConsecutiveDelimitersRule","join");
 		T(end,:)=[];
 		T(:,1)=[];
-		vars={'top_age_b1950','d18O','dust>0.63','Cl','NO3','SO4'};
+		vars={'age','d18O','dust','Cl','NO3','SO4'};
 		T.Properties.VariableNames=vars;
+		T.Properties.VariableUnits={'ka b1950','‰',...
+			'Particles >0.63um (x10^5)','ppm','ppm','ppm'};
 	elseif subset == "C1-accumulation"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/sajama/sc1-acc.txt";
 		T=readtable(url,"Delimiter"," ","NumHeaderLines",175,...
@@ -917,13 +1150,14 @@ elseif dataset == "sajama"
 			"ConsecutiveDelimitersRule","join");
 		T(end,:)=[];
 		T(:,1)=[];
-		T.Properties.VariableNames={'top_age_kaBP','accumul_stdev'};
+		T.Properties.VariableNames={'age','accumulation'};
+		T.Properties.VariableUnits={'ka BP','m (stdev)'};
 	elseif subset == "sample-avg"
 		url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/trop/sajama/sc12-5m.txt";
 		T0=readtable(url,"Delimiter"," ","NumHeaderLines",176,...
 			"ReadVariableNames",false,...
 			"ConsecutiveDelimitersRule","join");
-		vars={'top_depth_m','C1_dust>0.63','C1_d18O','C1_Cl','C1_NO3','C1_SO4','C2_d18O'};
+		vars={'depth','C1_dust','C1_d18O','C1_Cl','C1_NO3','C1_SO4','C2_d18O'};
 		%%% Fix table by splitting into two and then rejoining after corrections
 		% First 25 rows
 		T1=T0(1:25,:);
@@ -939,6 +1173,9 @@ elseif dataset == "sajama"
 		replacement=T{end,2};
 		T{end,2}=NaN;
 		T.C2_d18O(end)=replacement;
+		% Add units to table
+		T.Properties.VariableUnits={...
+			'm','Particles >0.63um (x10^5)','‰','ppm','ppm','ppm','‰'};
 	else
 		error("Subset not understood. Make sure the subset is spelled correctly and written as a string.")
 	end
@@ -949,6 +1186,7 @@ elseif dataset == "sajama"
 elseif dataset == "siple-station"
 	url="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/siple/siple1990d18o.txt";
 	T=readtable(url,"Delimiter","\t","NumHeaderLines",98);
+	T.Properties.VariableUnits={'yr CE','‰'};
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% WINDY DOME, FRANZ JOSEF LAND 850 yr D18O and MELT DATA
@@ -958,6 +1196,7 @@ elseif dataset == "windy-dome"
 		T=readtable(url,"Delimiter","\t","NumHeaderLines",104);
 		vars={'age_CE','d18O','melt_percent'};
 		T.Properties.VariableNames=vars;
+		T.Properties.VariableUnits={'yr CE','‰','%'};
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % IF FIRST INPUT ARGUMENT IS SPELLED INCORRECTLY
