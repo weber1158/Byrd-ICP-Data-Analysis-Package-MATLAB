@@ -186,7 +186,19 @@ To edit the plot, use dot-indexing in the same way that you would with any other
 >> legend('Nitrate Concentration') % Change contents of the figure legend
 ```
 
-**NOTE** If specifying a third input to the `icePlot()` function, the y-axis will be given a default label depending on the parameter that you specified (see the third column of the table above). The label is not guaranteed to be consistent between data sets. For instance, by default, specifying `"no3"` as the third input will label the y-axis as `ppb`. While most of the nitrate concentration data sets are indeed given in units of ppb, some are in units of ppm. If you are unsure what the true units are supposed to be, visit the DOI link for the data set to check the metadata on the NCEI website. You can use the `cite()` function to print the correct DOI link. If you find that the default y-label within the `icePlot()` function is not correct for your data set, you can manually change the y-axis label by using the `ylabel` function (just as with normal MATLAB plots):
+**NOTE** If specifying a third input to the `icePlot()` function, the y-axis will be given a default label depending on the parameter that you specified (see the third column of the table above). The label is not guaranteed to be consistent between data sets. For instance, by default, specifying `"no3"` as the third input will label the y-axis as `ppb`. While most of the nitrate concentration data sets are indeed given in units of ppb, some are in units of ppm. If you are unsure what the true units are supposed to be, you can go to the table properties of your data set and extract the variable units. For example:
+
+```matlab
+% Import table of data for the Sajama ice core
+sajama = readICP("sajama","C1-100yr-avg");
+
+% Check units of each variable
+units = sajama.Properties.VariableUnits
+```
+
+Alternatively, you can visit the DOI link for the data set to check the metadata on the NCEI website (use the `cite()` function to print the correct DOI link). 
+
+If you find that the default y-label within the `icePlot()` function is not correct for your data set, you can manually change the y-axis label by using the `ylabel` function (just as with normal MATLAB plots):
 
 ```matlab
 >> myPlot = icePlot(xData,yData,"no3");
